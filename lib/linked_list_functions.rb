@@ -104,6 +104,7 @@ def list_max(list)
   max
 end
 
+=======
 
 
 # These ones are harder
@@ -111,4 +112,6 @@ def list_at(list, index)
 end
 
 def list_insert(list, index, data)
+end
+def node_insert(node, index, data)
 end
