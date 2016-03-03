@@ -4,10 +4,10 @@
 
 # These ones are good to start with:
 def list_first(list)
-  if list == nil
-    head
+  if list.head == nil
+    nil
     #return nil
-  elsif list.head != nil && list.head
+  else# list.head != nil# && list.head
     return list.head.data
   end
 end
@@ -33,21 +33,22 @@ end
 
 # Probably a nice intermediate set
 def list_size(list)
-  i = 0
+  if list.head == nil
+    return 0
+  end
+  i = 1
   node = list.head
+  while node.link != nil
+    i += 1
+    node = node.link
+  end
+  i
 =begin
-  if list.head
+  if node  #list.head.link
     i = 1
-    if list.head.link
+    if node.link    #list.head.link
       i += 1
-      if list.head.link.link
-        i += 1
-=end
-  if node
-    i = 1
-    if node.link
-      i += 1
-      if node.link.link
+      if node.link.link   #list.head.link.link
         i += 1
       end
     end
@@ -55,26 +56,54 @@ def list_size(list)
   else
     i
   end
+=end
 end
 
 
 def list_last(list)
-  i = 0
-  if list.head
-    "a"
-    if list.head
-      "bbq"
-    end
-  else
-    nil
+  if list.head == nil
+    return nil
   end
+
+  node = list.head
+  while node.link != nil
+    node = node.link
+  end
+  node.data
+  #if list.head != nil
+   # "a"
+    #if list.head
+     # "bbq"
+    # end
+  #else
+   # nil
+  #end
 end
 
 def list_min(list)
+  node = list.head
+  return nil if node.nil?
+  min = node.data
+  while node
+    data = node.data
+    min = data if data < min
+    node = node.link
+  end
+  min
 end
 
 def list_max(list)
+  node = list.head
+  return nil if node.nil?
+  max = node.data
+  while node
+    data = node.data
+    max = data if data > max
+    node = node.link
+  end
+  max
 end
+
 
 
 # These ones are harder

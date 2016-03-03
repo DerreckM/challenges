@@ -1,17 +1,26 @@
 def block_to_proc(&block)
-  block.wrap(2)
+  block
 end
 
 def wrap(value)
+  block_to_proc {value}
 end
 
 def call_twice(&block)
+  block.call
+  block.call
 end
+
 
 def call_thrice(&block)
+  block.call
+  block.call
+  block.call
 end
 
+
 def yield_first(array, &block)
+  array = 0
 end
 
 def yield_em_all(array, &block)
