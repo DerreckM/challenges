@@ -20,10 +20,15 @@ end
 
 
 def yield_first(array, &block)
-  array = ["a"]
+  if array == []
+    []
+  else
+    block.call(array[0])
+  end
 end
 
 def yield_em_all(array, &block)
+
 end
 
 def yield_two(array, &block)
