@@ -132,10 +132,39 @@ end
 
 
 def yield_with_while_loop(array, &block)
+  if array == []
+    []
+  else
+    i = 0
+    while i < array.length
+      block.call(array[i])
+      i += 1
+    end
+  end
 end
 
 def yield_with_each(array, &block)
+  if array == []
+    []
+  else
+    array.each do |i|
+      block.call(i)
+    end
+  end
 end
 
 def best_advice(array, &block)
+  if array == []
+    []
+  else
+    array[0]
+  end
+end
+
+
+# You'll have to figure out how to define aside :)
+
+
+class OnCount
+  # you'll have to figure out what goes in here :)
 end

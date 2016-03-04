@@ -4,12 +4,18 @@
 
 # These ones are good to start with:
 def list_first(list)
+<<<<<<< HEAD
   if list.head == nil
     nil
     #return nil
   else# list.head != nil# && list.head
     return list.head.data
   end
+=======
+  # Try typing this into pry: show-source -e list.class
+  require "pry"
+  binding.pry
+>>>>>>> cdb0e32f5f7c8d68ecec19baedd94c839a72d923
 end
 
 def list_shift(list)
