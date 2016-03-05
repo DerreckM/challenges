@@ -38,12 +38,37 @@ class NilNode
     true
   end
 
-  def []
+  def [](i)
     nil
   end
 
+  def insert(i, data)
+    return NormalNode.new(data, self) unless i > 0
+    i -= 1
+    NormalNode.new(nil, self.insert(i, data))
+  end
 end
 
 class NormalNode
   # and these methods
+  attr_reader :data, :link
+  def initialize(data, link)
+    @data = data
+    @link = link
+  end
+  def length
+    link.length + 1
+  end
+
+  def min
+    return data if link.nil?
+  end
+
+  def max
+
+  end
+
+  def first
+    data
+  end
 end
