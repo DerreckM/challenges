@@ -119,14 +119,11 @@ end
 
 
 def yield_ten(array, &block)
-  if array == []
-    []
-  else
-    i = 0
-    while i < array.length
-      block.call(array[i])
-      i += 1
-    end
+  #or we can refactor and below is a cleaner way to get same result
+  i = 0
+  while array[i]
+    yield array[i]
+    i += 1
   end
 end
 
@@ -155,9 +152,16 @@ end
 
 def best_advice(array, &block)
   if array == []
-    []
+    array
   else
-    array[0]
+    i = 0
+    while array[i]
+      if block.call(array[i])
+        return array[i]
+      else
+        i += 1
+      end
+    end
   end
 end
 
