@@ -10,6 +10,9 @@ def list_first(list)
   else# list.head != nil# && list.head
     return list.head.data
   end
+  # Try typing this into pry: show-source -e list.class
+  #require 'pry'
+  #binding.pry
 end
 
 def list_shift(list)
@@ -28,8 +31,10 @@ def list_unshift(list, data)
   #binding.pry
   list.head = Node.new(data, list.head)
   list
+ # Try typing this into pry: show-source -e list.class
+ #require "pry"
+ #binding.pry
 end
-
 
 # Probably a nice intermediate set
 def list_size(list)
@@ -60,11 +65,13 @@ def list_size(list)
 end
 
 
+#def list_size(list)
+#end
+
 def list_last(list)
   if list.head == nil
     return nil
   end
-
   node = list.head
   while node.link != nil
     node = node.link
@@ -103,7 +110,6 @@ def list_max(list)
   end
   max
 end
-
 
 
 # These ones are harder
