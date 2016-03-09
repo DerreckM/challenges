@@ -26,6 +26,9 @@ RSpec.describe 'modules as namespaces' do
       assert_equal 2, MahMod.find_c(MahMod::B)
     end
     it 'finds <ArbitraryMod>::C when given <ArbitraryMod>' do
+
+      require "pry"
+      binding.pry
       wat_mod = Module.new { const_set :C, 'wat' }
       lol_mod = Module.new { const_set :C, 'lol' }
       assert_equal 'wat', MahMod.find_c(wat_mod)
